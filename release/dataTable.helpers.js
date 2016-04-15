@@ -1615,7 +1615,7 @@
         function mousemove(event) {
           event = event.originalEvent || event;
 
-          var width = parent[0].scrollWidth,
+          var width = parent[0].clientWidth,
               movementX = event.movementX || event.mozMovementX || event.screenX - prevScreenX,
               newWidth = width + (movementX || 0);
 
@@ -1631,7 +1631,7 @@
         function mouseup() {
           if ($scope.onResize) {
             $timeout(function () {
-              $scope.onResize({ width: parent[0].scrollWidth });
+              $scope.onResize({ width: parent[0].clientWidth });
             });
           }
 
